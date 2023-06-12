@@ -1,0 +1,34 @@
+
+<mat-toolbar #toolbar style="background-color: black;">
+    <mat-toolbar-row>
+        <button main-icon-button  style="background-color: black;">
+            <mat-icon (click)="sidenav.toggle();" style="-webkit-text-fill-color:white; background-color: black;">menu</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container style="background-color: rgb(44, 41, 41);">
+    <mat-sidenav #sidenav opened="true" mode="side" style="background-color: black;">
+        <mat-nav-list style="-webkit-text-fill-color:white;" >
+            <a  mat-list-item>COMANDANCIA</a>
+            <a  mat-list-item>DI. MABEFA.</a>
+            <a  mat-list-item (click)="visibilidad()">REGIONES</a>
+            <a  mat-list-item>ALA AÉREAS</a>
+            <a  mat-list-item>GRUPOS AÉREOS</a>
+            <a  mat-list-item>BASES</a>
+            <a  mat-list-item>ESCUADRÓN AÉREO</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+
+<mat-sidenav-content>
+    <div style="height: 88vh;">
+        <router-outlet>
+            <app-regiones></app-regiones>
+            <app-alas></app-alas>
+        </router-outlet>
+    </div>
+
+</mat-sidenav-content>
+</mat-sidenav-container>
+
+
